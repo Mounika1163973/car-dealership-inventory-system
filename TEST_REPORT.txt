@@ -1,0 +1,62 @@
+PASS tests/vehicle.test.js
+  Vehicle routes authentication
+    ✓ rejects requests without a token (280 ms)
+    ✓ rejects requests with an invalid token (191 ms)
+  POST /api/vehicles
+    ✓ creates a new vehicle when authenticated (194 ms)
+    ✓ rejects an invalid payload (188 ms)
+  GET /api/vehicles
+    ✓ returns all vehicles (196 ms)
+  GET /api/vehicles/search
+    ✓ filters by make (207 ms)
+    ✓ filters by category (197 ms)
+    ✓ filters by price range (200 ms)
+  PUT /api/vehicles/:id
+    ✓ updates a vehicle (190 ms)
+    ✓ returns 404 for a non-existent vehicle (187 ms)
+  DELETE /api/vehicles/:id
+    ✓ allows an admin to delete a vehicle (187 ms)
+    ✓ forbids a non-admin from deleting a vehicle (191 ms)
+  POST /api/vehicles/:id/purchase
+    ✓ decreases quantity by 1 by default (188 ms)
+    ✓ rejects a purchase that exceeds available stock (192 ms)
+  POST /api/vehicles/:id/restock
+    ✓ allows an admin to increase quantity (190 ms)
+    ✓ forbids a non-admin from restocking (189 ms)
+
+PASS tests/auth.test.js
+  POST /api/auth/register
+    ✓ registers a new user and returns a token (128 ms)
+    ✓ allows registering an admin user via the role field (95 ms)
+    ✓ rejects registration with a missing field (3 ms)
+    ✓ rejects a password shorter than 6 characters (2 ms)
+    ✓ rejects duplicate emails (95 ms)
+  POST /api/auth/login
+    ✓ logs in with correct credentials and returns a token (186 ms)
+    ✓ rejects an incorrect password (194 ms)
+    ✓ rejects a non-existent email (95 ms)
+
+-----------------------|---------|----------|---------|---------|-------------------
+File                   | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------|---------|----------|---------|---------|-------------------
+All files              |   89.86 |    83.33 |    86.2 |   93.45 |                   
+ src                   |   76.47 |      100 |       0 |   76.47 |                   
+  app.js               |   76.47 |      100 |       0 |   76.47 | 13,21,27-28       
+ src/controllers       |   87.25 |    86.31 |    90.9 |   92.39 |                   
+  authController.js    |   96.77 |    94.73 |     100 |   96.77 | 42                
+  vehicleController.js |   83.09 |    84.21 |   88.88 |   90.16 | 55,58,65-67,105   
+ src/middleware        |     100 |      100 |     100 |     100 |                   
+  auth.js              |     100 |      100 |     100 |     100 |                   
+ src/models            |   91.78 |       64 |     100 |   95.71 |                   
+  db.js                |   93.75 |       50 |     100 |   93.75 | 16                
+  userModel.js         |     100 |        0 |     100 |     100 | 4                 
+  vehicleModel.js      |   89.79 |       70 |     100 |   95.65 | 29-30             
+ src/routes            |     100 |      100 |     100 |     100 |                   
+  authRoutes.js        |     100 |      100 |     100 |     100 |                   
+  vehicleRoutes.js     |     100 |      100 |     100 |     100 |                   
+-----------------------|---------|----------|---------|---------|-------------------
+Test Suites: 2 passed, 2 total
+Tests:       24 passed, 24 total
+Snapshots:   0 total
+Time:        4.608 s, estimated 5 s
+Ran all test suites.

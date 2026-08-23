@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.env
+backend/data/*.sqlite3
+backend/data/*.sqlite3-*
+coverage/
+*.log
