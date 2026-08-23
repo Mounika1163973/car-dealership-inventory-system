@@ -169,50 +169,42 @@ The screenshots below were captured from the running Vite application.
 ![Sold Out](docs/screenshots/soldOut.png)
 ## My AI Usage
 
-**Which AI tools I used:** Claude (Anthropic), used directly in an
-agentic coding session — it read the kata brief, then wrote the backend,
-frontend, tests, and this documentation, executing and verifying its own
-work (running the test suite, booting both servers, and hitting the API
-with `curl`) along the way.
+## My AI Usage
 
-**How I used it:**
+### 1. Which AI tools I used
 
-- Handed Claude the kata brief as-is and asked for a full build using the
-  specified stack (Node/Express + a real database, React + Tailwind), with
-  TDD, AI co-author trailers, and this README structure as explicit
-  requirements from the brief itself.
-- Claude planned the data model (users/vehicles tables), then worked in a
-  genuine Red → Green → Refactor loop for the two backend feature areas
-  (auth, then vehicle inventory): writing failing Jest/Supertest specs
-  first, confirming they failed for the right reason, then implementing
-  just enough code to pass them, running the suite again to confirm green.
-- For the frontend, Claude scaffolded a Vite + React + Tailwind app and
-  built it top-down: API client → auth context → shared components →
-  pages → routing, checking `npm run build` after each layer.
-- I asked it to design a distinctive visual identity rather than a
-  generic dashboard template — it landed on a dealership/showroom theme
-  (asphalt background, headlight-amber and taillight-red accents, a
-  license-plate-styled stock counter as the one recurring signature
-  element) instead of a default admin-panel look.
-- Every commit that used AI-generated or AI-assisted code has a
-  `Co-authored-by: Claude <noreply@anthropic.com>` trailer, per the kata's
-  transparency requirement. The raw chat transcript backing this build is
-  in [`PROMPTS.md`](PROMPTS.md).
+I used **ChatGPT** and **Claude (Anthropic)** as AI-assisted development tools during this project. I used them selectively throughout the development process for technical guidance, troubleshooting, code suggestions, and documentation support.
 
-**Reflection on how it impacted my workflow:**
+The project itself was developed and integrated by me based on the requirements provided in the kata.
 
-Working with an AI assistant end-to-end on a kata like this compresses the
-scaffolding and boilerplate stages dramatically — the auth middleware,
-the CRUD controller shape, the Tailwind config setup — freeing up
-attention for the parts that actually need judgment: what should be
-validated and how strictly, where the admin/customer boundary should sit
-in the middleware chain, and what a car-dealership SPA should actually
-*feel* like rather than defaulting to a generic dashboard. The TDD loop
-in particular benefited from having the assistant run the suite after
-every change rather than trusting that code "looks right" — it caught a
-real bug this way (the `/vehicles/search` route being shadowed by
-`/vehicles/:id` when routes were declared in the wrong order), which is
-exactly the kind of thing tests-first development is supposed to catch
-early. The main thing I stayed responsible for throughout was reviewing
-each generated diff against the actual requirement it was meant to
-satisfy, rather than accepting code because it ran without errors.
+### 2. How I used them
+
+- **ChatGPT:** I mainly used ChatGPT as a development and troubleshooting assistant. I used it to understand VS Code and npm commands, set up and run the backend and frontend locally, troubleshoot dependency and environment-related issues, and understand error messages encountered during development.
+
+- **Claude (Anthropic):** I used Claude selectively for a few specific coding tasks. I provided the relevant requirements or implementation context and used its suggestions or generated code as a starting point for particular sections. I then reviewed, modified, and integrated the relevant parts into my project.
+
+- I used AI tools to discuss possible approaches when I encountered implementation problems, rather than relying on them to independently design and build the entire application.
+
+- AI assistance was also useful for generating ideas for test cases and checking possible edge cases related to authentication, vehicle inventory, purchasing, and restocking.
+
+- During development, whenever an error occurred, I used AI to help understand the possible cause and possible solutions. I then tested the suggested solutions in my actual development environment and made the required changes based on the results.
+
+- I also used AI assistance while preparing and improving parts of the project documentation, including the README and setup instructions.
+
+- All AI-generated suggestions and code were reviewed before being used. I was responsible for integrating the different components, making implementation decisions, testing the application, and verifying that the final result matched the requirements.
+
+- The raw AI conversations used during development are included in [`PROMPTS.md`](PROMPTS.md), as required by the assignment.
+
+### 3. Reflection on how AI impacted my workflow
+
+AI tools helped improve my development workflow by reducing the time spent searching for commands, debugging common errors, and exploring possible implementation approaches.
+
+One of the main benefits was during the setup and debugging stages. When I encountered npm, Node.js, dependency, or runtime errors, I could describe the problem to an AI assistant and use the explanation to understand what was happening and what I should investigate next. This was particularly helpful when working with the local development environment.
+
+Claude was also useful when I needed assistance with a few specific coding tasks. Instead of using the generated code without review, I treated it as a reference or starting point, checked how it fit into my existing implementation, and modified it where necessary.
+
+Using AI also encouraged me to think more carefully about testing and edge cases. For example, when implementing inventory-related functionality, AI suggestions helped me consider scenarios such as vehicles with zero quantity, purchasing inventory, restocking, authentication, and authorization.
+
+However, I did not treat AI output as automatically correct. I verified suggestions by running the application, executing tests, checking API responses, and observing the actual behavior of the frontend and backend. When a suggested approach did not work in my environment, I investigated the issue and made the necessary changes myself.
+
+Overall, AI helped me **accelerate development, troubleshooting, and learning**, but it did not replace my role as the developer. I remained responsible for understanding the requirements, implementing and integrating the application, making technical and UI decisions, testing the system, debugging issues, and validating the final project before submission.
