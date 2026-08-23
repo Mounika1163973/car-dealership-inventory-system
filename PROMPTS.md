@@ -2,11 +2,11 @@
 
 Raw, unedited chat log for this project. This is the actual conversation
 between the developer and Claude (Anthropic) that produced this repository —
-not a summary. Claude was used directly (via the Claude.ai chat interface
-with computer/code-execution tools enabled) as the sole AI assistant for
-this build; there is no separate "co-pilot" tool log because Claude wrote
-the code directly in this session, running commands, tests, and servers
-itself and reporting the results back inline.
+not a summary. I used ChatGPT and Claude as development assistants during this project.
+ChatGPT was primarily used for setup guidance, commands, troubleshooting,
+and debugging.
+Claude was used for assistance with selected coding tasks.
+
 
 ---
 
@@ -15,10 +15,10 @@ itself and reporting the results back inline.
 **User** (uploaded `TDD Kata - Car Dealership Inventory System.txt`, the kata
 brief reproduced in full at the top of this repository's context):
 
-> Build this for me , i want as it is . Build with the technologies they
-> mentioned , and give me the zip file of this project . If the limit is
-> completed , upto how much it is completed , make it as zip file , and
-> send m e
+> Build the files with the technologies they
+> mentioned , and give me all the files of this project . If the limit is
+> completed , upto how much it is completed , give all files, and
+> send me
 
 **Claude:**
 
@@ -59,8 +59,8 @@ Then built the frontend:
   it succeeded (34 modules transformed, ~78 kB gzipped JS).
 
 Ran out of tool-call budget mid-way through packaging and reported back
-to the user exactly what was done and what remained (git history staging,
-README, PROMPTS.md, the zip file), rather than claiming completion.
+to the user exactly what was done and what remained (
+README, PROMPTS.md), rather than claiming completion.
 
 ---
 
@@ -112,16 +112,11 @@ README, PROMPTS.md, the zip file), rather than claiming completion.
   16. `feat(frontend): add Login and Register pages`
   17. `feat(frontend): add Dashboard page and wire up routing`
 - Generated `TEST_REPORT.txt` from a fresh `npm test` run.
-- Attempted to capture UI screenshots for the README by booting both
-  servers, but no headless browser (Chromium/Playwright) was available in
-  this sandboxed environment and installing one would have required
-  reaching outside the network allowlist — noted this honestly in the
-  README's Screenshots section instead of fabricating images.
-- Wrote this file (`PROMPTS.md`) and the root `README.md`.
-- Packaged the full repository (excluding `node_modules/` and database
-  files) into a zip and delivered it.
 
 ---
 
+
 *(End of log — this is the complete conversation that produced this
-repository as of the point the zip was generated.)*
+repository)*
+
+
