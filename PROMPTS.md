@@ -9,7 +9,7 @@ Claude was used for assistance with selected coding tasks.
 
 
 ---
-
+## Claude 
 ## Turn 1
 
 **User** (uploaded `TDD Kata - Car Dealership Inventory System.txt`, the kata
