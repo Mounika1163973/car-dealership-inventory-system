@@ -151,22 +151,22 @@ All files               |   89.86 |    83.33 |    86.2 |   93.45
 The screenshots below were captured from the running Vite application.
 
 ### Register
-![Register](screenshots/register.png)
+![Register](docs/screenshots/register.png)
 
 ### Login
-![Login](screenshots/Login.png)
+![Login](docs/screenshots/Login.png)
 
 ### Customer Dashboard
-![Customer Dashboard](screenshots/vehicleList.png)
+![Customer Dashboard](docs/screenshots/vehicleList.png)
 
 ### Search and Filter
-![Search](screenshots/searchVehicle.png)
+![Search](docs/screenshots/searchVehicle.png)
 
 ### Admin Dashboard
-![Admin Dashboard](screenshots/adminPage.png)
+![Admin Dashboard](docs/screenshots/adminPage.png)
 
 ### Sold Out
-![Sold Out](screenshots/soldOut.png)
+![Sold Out](docs/screenshots/soldOut.png)
 ## My AI Usage
 
 **Which AI tools I used:** Claude (Anthropic), used directly in an
